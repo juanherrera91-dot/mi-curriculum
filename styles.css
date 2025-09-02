@@ -1,0 +1,91 @@
+:root{
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --accent:#0b7dda;
+  --text:#1b1b1b;
+  --muted:#6b7280;
+  --radius:12px;
+  --maxw:900px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.45;
+  display:flex;
+  justify-content:center;
+  padding:32px 16px;
+}
+
+.site-header{
+  width:100%;
+  max-width:var(--maxw);
+  margin-bottom:20px;
+}
+
+.profile{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  background:var(--card);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow: 0 6px 18px rgba(12,20,30,0.06);
+}
+
+.avatar{
+  width:96px;
+  height:96px;
+  object-fit:cover;
+  border-radius:12px;
+  flex:0 0 96px;
+  border:2px solid rgba(11,125,218,0.12);
+}
+
+.profile-info h1{margin:0 0 6px 0;font-size:1.25rem}
+.resumen{margin:0 0 8px 0;color:var(--muted)}
+.contact a{color:var(--accent); text-decoration:none}
+
+main{
+  width:100%;
+  max-width:var(--maxw);
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+
+/* Card style for sections */
+.card{
+  background:var(--card);
+  padding:16px;
+  border-radius:10px;
+  box-shadow: 0 6px 16px rgba(12,20,30,0.04);
+}
+
+.skills{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.skills li{display:flex;flex-direction:column;gap:6px}
+.skill-name{font-size:.95rem;color:var(--muted)}
+
+/* Projects */
+.project h3{margin:0 0 6px 0}
+.project p{margin:0;color:var(--muted)}
+
+/* Footer */
+.site-footer{
+  width:100%;
+  max-width:var(--maxw);
+  margin-top:14px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+/* Responsive: two columns on large screens */
+@media (min-width:900px){
+  main{grid-template-columns: 1fr 1fr}
+  .profile{align-items:center}
+  .site-header .profile{padding:20px}
+}
