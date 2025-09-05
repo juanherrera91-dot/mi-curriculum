@@ -3,9 +3,9 @@
 }
 
 :root {
-  --accent: #0b7dda;
-  --bg: #f7f8fb;
-  --card: #ffffff;
+  --accent: #0b31da;
+  --bg: #d0d9f5;
+  --card: #b39f9f;
   --text: #1b1b1b;
   --muted: #6b7280;
   --radius: 12px;
@@ -121,13 +121,13 @@ progress {
      -moz-appearance: none;
           appearance: none;
   border: none;
-  background: #e6eef9;
+  background: #131414;
   border-radius: 999px;
   overflow: hidden;
 }
 
 progress::-webkit-progress-bar {
-  background: #e6eef9;
+  background: #1d1e1f;
 }
 
 progress::-webkit-progress-value {
@@ -179,3 +179,8 @@ progress::-webkit-progress-value {
     padding: 1.25rem;
   }
 }/*# sourceMappingURL=styles.css.map */
+
+/*dseño responsive*/
+@media (min-width: 900px) {
+  #proyectos .card { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+}
