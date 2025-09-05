@@ -3,62 +3,94 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Currículum — Juan Alberto Herrera</title>
-  <meta name="description" content="Currículum de Juan Alberto Herrera Cazorla — Estudiante de Ingeniería en Sistemas. Experiencia en desarrollo web, gestión de sistemas y proyectos de software.">
+  <title>Juan Alberto Herrera Cazorla — Currículum</title>
+  <meta name="description" content="Currículum de Juan Alberto Herrera Cazorla — Estudiante de Ingeniería en Sistemas. Experiencia en desarrollo web y gestión de sistemas.">
+  <link rel="canonical" href="https://tudominio.com/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Juan Alberto Herrera — Currículum">
+  <meta property="og:description" content="Estudiante de Ingeniería en Sistemas. Desarrollo web, gestión de sistemas y proyectos de software.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://tudominio.com/">
+  <meta property="og:image" content="https://tudominio.com/assets/avatar.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Juan Alberto Herrera — Currículum">
+  <meta name="twitter:description" content="Estudiante de Ingeniería en Sistemas. Desarrollo web, gestión de sistemas y proyectos.">
+
+  <!-- Preconnect / performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link rel="stylesheet" href="styles.css">
 
-  <!-- JSON-LD para SEO -->
+  <!-- JSON-LD enriquecido -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Juan Alberto Herrera Cazorla",
-    "jobTitle": "Estudiante de Ingeniería en Sistemas",
-    "email": "mailto:juan.herrera@uab.edu.bo",
-    "telephone": "+59173823609",
-    "sameAs": []
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Juan Alberto Herrera Cazorla",
+    "jobTitle":"Estudiante de Ingeniería en Sistemas",
+    "url":"https://tudominio.com/",
+    "image":"https://tudominio.com/assets/avatar.png",
+    "email":"mailto:juan.herrera@uab.edu.bo",
+    "telephone":"+59173823609",
+    "sameAs":[]
   }
   </script>
 </head>
 <body>
-  <!-- Enlace para accesibilidad -->
-  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
 
   <header class="site-header" role="banner">
-    <div class="profile">
-      <img src="assets/avatar.png" alt="Juan Alberto Herrera, foto de perfil" class="avatar">
+    <div class="container header-grid">
+      <figure class="profile" aria-label="Foto y resumen de Juan Alberto">
+        <img src="assets/avatar.png"
+             srcset="assets/avatar-320.png 320w, assets/avatar-640.png 640w, assets/avatar.png 1024w"
+             sizes="(max-width: 640px) 120px, 200px"
+             alt="Juan Alberto Herrera, foto de perfil"
+             class="avatar"
+             width="200"
+             height="200"
+             loading="lazy">
+        <figcaption class="visually-hidden">Foto de Juan Alberto Herrera</figcaption>
+      </figure>
+
       <div class="profile-info">
         <h1>Juan Alberto Herrera Cazorla</h1>
-        <p class="resumen">Estudiante de Ingeniería en Sistemas — Universidad Adventista de Bolivia (UAB). 
-          Apasionado por el Diseño Grafico, la programación, la tecnología y el trabajo en equipo. 
-          Nacido en el departamento de Potosí en la localidad Minera de Llallagua, 
-          actualmente radico en el Departamento de Santa Cruz. Busco crecer en desarrollo de software y superarme a mi mismo.</p>
+        <p class="resumen">Estudiante de Ingeniería en Sistemas — Universidad Adventista de Bolivia (UAB). Apasionado por el diseño gráfico, la programación y el trabajo en equipo. Nacido en Potosí (Llallagua), actualmente en Santa Cruz.</p>
         <p class="contact">
-          <a href="mailto:juan.herrera@uab.edu.bo">juan.herrera@uab.edu.bo</a> ·
-          <a href="tel:+59173823609">+591 73823609</a>
+          <a href="mailto:juan.herrera@uab.edu.bo">juan.herrera@uab.edu.bo</a>
+          · <a href="tel:+59173823609">+591 73823609</a>
         </p>
       </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#formacion">Formación</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <main id="main" role="main">
-    <section aria-labelledby="formacion" class="card">
-      <h2 id="formacion">Formación Académica</h2>
+  <main id="main" role="main" class="container">
+    <section id="formacion" aria-labelledby="formacion_h" class="card">
+      <h2 id="formacion_h">Formación Académica</h2>
       <ul>
         <li><strong>Bachiller en Humanidades</strong> — Colegio Siglo XX América</li>
         <li><strong>Técnico Superior</strong> — Instituto Técnico Pío XII</li>
         <li><strong>Maestro Normalista</strong> — ESFM Enrique Finot</li>
         <li><strong>Ingeniería en Sistemas</strong> — Universidad Adventista de Bolivia (UAB)</li>
-        <li><strong>Encargado de Sistemas</strong> — Gobierno Autónomo Municipal de Llallagua</li>
       </ul>
     </section>
 
-    <section aria-labelledby="habilidades" class="card">
-      <h2 id="habilidades">Habilidades</h2>
-      <ul class="skills">
+    <section id="habilidades" aria-labelledby="habilidades_h" class="card">
+      <h2 id="habilidades_h">Habilidades</h2>
+      <ul class="skills" role="list">
         <li>
           <span class="skill-name">HTML / CSS / JavaScript</span>
-          <progress value="80" max="100" aria-label="Nivel HTML CSS JavaScript 90%"></progress>
+          <progress value="80" max="100" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-label="Nivel HTML CSS JavaScript 80%"></progress>
         </li>
         <li>
           <span class="skill-name">Git y GitHub</span>
@@ -70,43 +102,58 @@
         </li>
         <li>
           <span class="skill-name">MySQL y PHP</span>
-          <progress value="90" max="100" aria-label="Nivel MySQL 95 %"></progress>
+          <progress value="90" max="100" aria-label="Nivel MySQL 90%"></progress>
         </li>
         <li>Trabajo en equipo y bajo presión</li>
       </ul>
     </section>
 
-    <section aria-labelledby="proyectos" class="card">
-      <h2 id="proyectos">Experiencia / Proyectos</h2>
+    <section id="proyectos" aria-labelledby="proyectos_h" class="card">
+      <h2 id="proyectos_h">Experiencia / Proyectos</h2>
 
-      <article class="project">
-        <h3>Sitio y sistema web — GAMLL</h3>
+      <details class="project" open>
+        <summary><strong>Sitio y sistema web — GAMLL</strong></summary>
         <p>Desarrollo de página institucional y sistema de gestión para trámites municipales.</p>
-      </article>
+      </details>
 
-      <article class="project">
-        <h3>Sistema de préstamos de herramientas — Laboratorio Topográfico</h3>
+      <details class="project">
+        <summary><strong>Sistema de préstamos de herramientas — Laboratorio Topográfico</strong></summary>
         <p>Aplicación para el control de préstamos y devoluciones de equipo topográfico.</p>
-      </article>
+      </details>
 
-      <article class="project">
-        <h3>Sistema de ventas — Farmacia PROVIDA</h3>
+      <details class="project">
+        <summary><strong>Sistema de ventas — Farmacia PROVIDA</strong></summary>
         <p>Desarrollo de módulo de facturación y control de inventario.</p>
-      </article>
+      </details>
 
-      <article class="project">
-        <h3>Sistema de registro de hospedaje — Alojamiento La Joya</h3>
+      <details class="project">
+        <summary><strong>Sistema de registro de hospedaje — Alojamiento La Joya</strong></summary>
         <p>Registro y control de reservas y alojados.</p>
-      </article>
+      </details>
     </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
-    <address>
-      Contacto: <a href="mailto:juan.herrera@uab.edu.bo">juan.herrera@uab.edu.bo</a> · 
-      <a href="tel:+59173823609">+591 73823609</a>
-    </address>
-    <p>Disponible para proyectos y prácticas profesionales.</p>
+    <div class="container">
+      <address>
+        Contacto: <a href="mailto:juan.herrera@uab.edu.bo">juan.herrera@uab.edu.bo</a> · <a href="tel:+59173823609">+591 73823609</a>
+      </address>
+      <p>Disponible para proyectos y prácticas profesionales.</p>
+    </div>
   </footer>
+
+  <!-- Pequeño snippet para mejorar foco visible (opcional) -->
+  <script>
+    // Añade clase a body si el usuario usa teclado (mejora visibles focus)
+    (function(){
+      function handleFirstTab(e) {
+        if (e.key === 'Tab') {
+          document.body.classList.add('user-is-tabbing');
+          window.removeEventListener('keydown', handleFirstTab);
+        }
+      }
+      window.addEventListener('keydown', handleFirstTab);
+    })();
+  </script>
 </body>
 </html>
