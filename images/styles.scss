@@ -1,0 +1,134 @@
+// Variables
+$accent: #0b7dda;
+$bg: #f7f8fb;
+$card: #ffffff;
+$text: #1b1b1b;
+$muted: #6b7280;
+$radius: 12px;
+$maxw: 1100px;
+
+// Mixins
+@mixin container {
+  max-width: $maxw;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Mobile first
+* { box-sizing: border-box; }
+:root {
+  --accent: #0b7dda;
+  --bg: #f7f8fb;
+  --card: #ffffff;
+  --text: #1b1b1b;
+  --muted: #6b7280;
+  --radius: 12px;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden { 
+  position: absolute !important; 
+  height: 1px; width: 1px; overflow: hidden; clip: rect(1px,1px,1px,1px);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.user-is-tabbing .skip-link:focus,
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: var(--accent);
+  color: white;
+  padding: .5rem .75rem;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+/* Container */
+.container { @include container; }
+
+/* Header grid (mobile stacked) */
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.profile { display:flex; gap:1rem; align-items:center; }
+.avatar {
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(11,125,218,0.08);
+}
+
+/* Nav */
+.main-nav ul { display:flex; gap: .5rem; flex-wrap:wrap; list-style:none; padding:0; margin:0; }
+.main-nav a {
+  text-decoration:none; padding:.35rem .6rem; border-radius:8px; color:var(--accent);
+}
+.main-nav a:focus,
+.main-nav a:hover { background: rgba(11,125,218,0.07); outline: none; }
+
+/* Cards */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.04);
+  margin-bottom: 1rem;
+}
+
+/* Skills progress (simple accessible styling) */
+progress {
+  width: 100%;
+  height: 0.8rem;
+  appearance: none;
+  border: none;
+  background: #e6eef9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+progress::-webkit-progress-bar { background: #e6eef9; }
+progress::-webkit-progress-value { background: var(--accent); border-radius: 999px; transition: width 0.6s ease; }
+
+/* Projects - details summary */
+.project summary {
+  cursor: pointer;
+  list-style: none;
+  padding: .6rem 0;
+  display: block;
+  font-weight: 600;
+}
+.project[open] summary { color: var(--accent); }
+
+/* Footer */
+.site-footer { padding: 1rem 0; color: var(--muted); font-size:.95rem; }
+
+/* Media queries - desktop */
+@media (min-width: 768px) {
+  .header-grid { grid-template-columns: auto 1fr auto; align-items: center; gap:1.5rem; }
+  .avatar { width: 140px; height: 140px; }
+  .profile-info { padding-right: 1rem; }
+  .main-nav ul { flex-direction: column; gap:.25rem; }
+  .card { padding: 1.25rem; }
+}

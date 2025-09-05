@@ -1,201 +1,181 @@
-/* --------------------------
-   Variables y resets
---------------------------- */
-:root {
-  --primary: #2c3e50;
-  --secondary: #3498db;
-  --background: #454647;
-  --card-bg: #f0f0f7;
-  --text: #333;
-  --text-light: #e4e0e0;
-  --radius: 12px;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --font: 'Segoe UI', Tahoma, sans-serif;
-}
-
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: var(--font);
-  background: var(--background);
-  color: var(--text);
-  line-height: 1.6;
+:root {
+  --accent: #0b7dda;
+  --bg: #f7f8fb;
+  --card: #ffffff;
+  --text: #1b1b1b;
+  --muted: #6b7280;
+  --radius: 12px;
 }
 
-/* --------------------------
-   Accesibilidad
---------------------------- */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Skip link */
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--secondary);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  z-index: 100;
-  transition: top 0.3s;
-}
-.skip-link:focus {
-  top: 10px;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-/* --------------------------
-   Header / Perfil
---------------------------- */
-.site-header {
-  background: var(--card-bg);
-  box-shadow: var(--shadow);
-  border-radius: var(--radius);
-  margin: 2.5rem auto;
-  padding: 2rem;
+.user-is-tabbing .skip-link:focus,
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+/* Container */
+.container {
   max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header grid (mobile stacked) */
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem 0;
 }
 
 .profile {
   display: flex;
+  gap: 1rem;
   align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
 }
 
 .avatar {
-  width: 140px;
-  height: 140px;
   border-radius: 50%;
-  border: 4px solid var(--secondary);
-  box-shadow: var(--shadow);
-  object-fit: cover;
+  width: 96px;
+  height: 96px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 6px 18px rgba(11, 125, 218, 0.08);
 }
 
-.profile-info h1 {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
+/* Nav */
+.main-nav ul {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.contact a {
-  color: var(--secondary);
+.main-nav a {
   text-decoration: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  color: var(--accent);
 }
-.contact a:hover,
-.contact a:focus {
-  text-decoration: underline;
+
+.main-nav a:focus,
+.main-nav a:hover {
+  background: rgba(11, 125, 218, 0.07);
   outline: none;
 }
 
-/* --------------------------
-   Main / Secciones
---------------------------- */
-main {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  gap: 1.5rem;
-}
-
+/* Cards */
 .card {
-  background: var(--card-bg);
-  padding: 1.5rem;
+  background: var(--card);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.card h2 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--secondary);
-  display: inline-block;
-  padding-bottom: 0.3rem;
-}
-
-/* --------------------------
-   Habilidades
---------------------------- */
-.skills {
-  list-style: none;
-}
-
-.skills li {
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.04);
   margin-bottom: 1rem;
 }
 
-.skill-name {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-}
-
+/* Skills progress (simple accessible styling) */
 progress {
   width: 100%;
-  height: 12px;
-  border-radius: var(--radius);
+  height: 0.8rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: #e6eef9;
+  border-radius: 999px;
   overflow: hidden;
-  appearance: none;
 }
+
 progress::-webkit-progress-bar {
-  background: #e0e0e0;
-  border-radius: var(--radius);
+  background: #e6eef9;
 }
+
 progress::-webkit-progress-value {
-  background: var(--secondary);
-}
-progress::-moz-progress-bar {
-  background: var(--secondary);
-}
-
-/* --------------------------
-   Proyectos
---------------------------- */
-.project {
-  margin-bottom: 1rem;
-}
-.project h3 {
-  font-size: 1.2rem;
-  color: var(--secondary);
-  margin-bottom: 0.3rem;
-}
-.project:hover {
-  background: #f9fcff;
-  border-left: 4px solid var(--secondary);
-  padding-left: 1rem;
-  transition: all 0.3s ease;
+  background: var(--accent);
+  border-radius: 999px;
+  -webkit-transition: width 0.6s ease;
+  transition: width 0.6s ease;
 }
 
-/* --------------------------
-   Footer
---------------------------- */
+/* Projects - details summary */
+.project summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.6rem 0;
+  display: block;
+  font-weight: 600;
+}
+
+.project[open] summary {
+  color: var(--accent);
+}
+
+/* Footer */
 .site-footer {
-  text-align: center;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  max-width: 1100px;
-  font-size: 0.9rem;
-  color: var(--text-light);
-}
-.site-footer a {
-  color: var(--secondary);
-  text-decoration: none;
-}
-.site-footer a:hover {
-  text-decoration: underline;
+  padding: 1rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-/* --------------------------
-   Responsive (Media Queries)
---------------------------- */
-@media (max-width: 768px) {
-  .profile {
-    flex-direction: column;
-    text-align: center;
+/* Media queries - desktop */
+@media (min-width: 768px) {
+  .header-grid {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
   }
   .avatar {
-    margin-bottom: 1rem;
+    width: 140px;
+    height: 140px;
   }
-  main {
-    padding: 0 1rem;
+  .profile-info {
+    padding-right: 1rem;
   }
-}
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .card {
+    padding: 1.25rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
