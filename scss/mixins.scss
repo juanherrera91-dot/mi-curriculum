@@ -1,0 +1,14 @@
+@function bp($k) {
+  @return map-get($breakpoints, $k);
+}
+
+@mixin respond-to($k) {
+  @media (min-width: bp($k)) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: 3px solid rgba(52,152,219,0.3);
+  outline-offset: 3px;
+}
